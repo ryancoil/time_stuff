@@ -1,0 +1,23 @@
+#### system times scratch ###
+
+library(lubridate)
+
+Sys.Date()
+
+month(Sys.Date())
+week(Sys.Date())
+day(Sys.Date())
+weekdays(Sys.Date())
+
+#last week date classification
+x <- Sys.Date()-7
+SOW <- floor_date(as.Date(x, "%m/%d/%Y"), unit="week")
+EOW <- as.Date(SOW)+6
+
+weeknum <- format(Sys.Date(), format = "%U")
+day_of_week <- format(Sys.Date(), format = "%u")
+
+z <- data.frame(paste(year(Sys.Date()), week(Sys.Date())))
+
+floor_date(Sys.Date(), unit = week)
+floor_date(as.Date(x, "%m/%d/%Y"), unit="week")
